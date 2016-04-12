@@ -10,8 +10,8 @@ esac
 
 export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t"
-export VISUAL="emacsclient -c -a emacs"
-alias emacs='emacsclient -c -n'
+export VISUAL="emacsclient -c"
+alias emacs='emacsclient -n'
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
