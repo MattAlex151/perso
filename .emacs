@@ -22,6 +22,8 @@
 (global-set-key (kbd "<C-right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "C-o") 'other-window)
 
+(setq backup-directory-alist `(("." . "~/.emacsbackups")))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
