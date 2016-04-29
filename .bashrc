@@ -14,6 +14,9 @@ export VISUAL="emacsclient -c"
 alias emacs='emacsclient -c -n'
 alias ec='emacsclient -n'
 
+#empty trash
+alias empty_trash='rm -rf ~/.local/share/Trash'
+
 #multi monitor
 alias single="xrandr --output LVDS1 --off"
 alias dual="xrandr --output DP1 --primary --left-of LVDS1 --output LVDS1 --auto"
