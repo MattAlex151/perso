@@ -24,6 +24,10 @@
 
 (setq backup-directory-alist `(("." . "~/.emacsbackups")))
 
+(add-to-list 'load-path "~/.emacs.d/load/")
+(require 'yaml-mode)
+    (add-to-list 'auto-mode-alist '("\\.e?ya?ml\\'" . yaml-mode))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

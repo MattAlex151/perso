@@ -21,6 +21,8 @@ alias empty_trash='rm -rf ~/.local/share/Trash'
 alias single="xrandr --output LVDS1 --off"
 alias dual="xrandr --output DP1 --primary --left-of LVDS1 --output LVDS1 --auto"
 
+alias vpn="sudo openvpn --config ~/certs/mattd.ovpn --daemon"
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
