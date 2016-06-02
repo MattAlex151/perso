@@ -18,7 +18,7 @@
 	old = red bold
 	new = green bold
 [format]
-	pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(white)%s %C(magenta) [%an]%Creset
+	pretty = format:%C(cyan)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(bold white)%s%Creset %C(magenta) [%an]%Creset
 [core]
 	autocrlf = input
 	pager = less -FRX
