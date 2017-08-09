@@ -7,26 +7,37 @@
  '(custom-safe-themes
    (quote
     ("70b9c3d480948a3d007978b29e31d6ab9d7e259105d558c41f8b9532c13219aa" default)))
- '(initial-buffer-choice "~/vw3")
- '(magit-log-arguments (quote ("--decorate" "--stat" "-n128")))
- '(package-archives
-   (quote
-    (("marmalade" . "https://marmalade-repo.org/packages/")
-     ("gnu" . "http://elpa.gnu.org/packages/")
-     ("melpa" . "http://melpa.org/packages/")))))
+ '(initial-buffer-choice "~/trx")
+ )
 
-(global-set-key (kbd "C-x g") 'magit-status)
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+  (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
+  (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+  (package-initialize))
+
+;; disable vc-git
+(setq vc-handled-backends ())
+
 (global-set-key (kbd "<C-up>") 'shrink-window)
 (global-set-key (kbd "<C-down>") 'enlarge-window)
 (global-set-key (kbd "<C-left>") 'shrink-window-horizontally)
 (global-set-key (kbd "<C-right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "C-o") 'other-window)
+(global-unset-key (kbd "C-z"))
 
-(setq backup-directory-alist `(("." . "~/.emacsbackups")))
+;; store all backup and autosave files in the tmp dir
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 (add-to-list 'load-path "~/.emacs.d/load/")
 (require 'yaml-mode)
     (add-to-list 'auto-mode-alist '("\\.e?ya?ml\\'" . yaml-mode))
+(require 'json-mode)
+    (add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
